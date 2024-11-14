@@ -1,0 +1,148 @@
+
+<div style="text-align:center;margin-bottom: 500px; margin-left: 250px">
+<a style="background-color: black; margin-right: 20px;padding: 10px;border-radius: 50px;color: white;font-family: Arial;" href="index.html">Home</a>
+<a  style="background-color: black; margin-right:20px;padding: 10px;border-radius: 50px;color: white;font-family: Arial; " href="ABOUT.html">About</a>
+<a  style="background-color: black; margin-right: 20px;padding: 10px;border-radius: 50px;color: white;font-family: Arial; " href="cv.html">CV</a>
+<a  style="background-color:black; black;padding: 10px;border-radius: 50px;color: white;font-family: Arial; " href="blog.html">Blog</a>
+<a  style="background-color: black; margin-left: 20px;padding: 10px;border-radius: 50px;color: white;font-family: Arial; " href="contact.html">Contact</a>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        /* CSS for styling the contact page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .contact-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-container h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+        .contact-info p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .social-links a {
+            margin-right: 1rem;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-container">
+    <h2>Contact Me</h2>
+    <form id="contactForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <div class="contact-info">
+        <p><strong>Email:</strong> your.email@example.com</p>
+        <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+        <p><strong>LinkedIn:</strong> <a href="#">Your LinkedIn Profile</a></p>
+    </div>
+
+    <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </div>
+</div>
+
+<script>
+    // JavaScript to validate the form
+    function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        if (name === "" || email === "" || message === "") {
+            alert("All fields are required.");
+            return false;
+        }
+
+        // Simple email validation
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        alert("Message submitted successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>
